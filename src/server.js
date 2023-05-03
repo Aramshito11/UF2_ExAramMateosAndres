@@ -28,8 +28,8 @@ connection.connect((err)=>{
 
 app.post('/modifCorreu', (req, res) => {
   connection.execute('ALTER TABLE alumnes MODIFY COLUMN alumn_e_mail VARCHAR(30)', (err)=>{
-    if (err) {
-      console.log("error")
+    if (`columnType = 'varchar(30)'`){
+      console.log("ja es varchar de 30")
     }
   })
 })
